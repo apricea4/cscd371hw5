@@ -11,9 +11,12 @@ namespace priceacscd371hw5
     {
         public Point topL;
         public Point botR;
-        private char piece = '0';
+        public char piece;
 
         
+
+
+
 
 
 
