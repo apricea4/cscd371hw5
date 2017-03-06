@@ -18,7 +18,7 @@ namespace priceacscd371hw5
         public int spacesLeft = 9;
         Char[ , ] gameBoard = new Char[3 , 3];
         bool player1 = true;
-
+        bool singlePlayer = false;
         public ticTacForm()
         {
             InitializeComponent();
@@ -66,25 +66,207 @@ namespace priceacscd371hw5
 
             }
 
-            //checkWin(gameBoard);
+            
 
             base.OnPaint(e);
 
         }
 
 
-        public void checkWin(char[,] gameBoard,int row, int col)
+        public void  checkWin( bool player1)
         {
-            Queue<char> winQueue = new Queue<char>();
-            if(row == 1 && col == 1)
+
+            if (gameBoard[0, 0] != '0')
             {
 
 
+
+                if (gameBoard[0, 0].Equals(gameBoard[0, 1]) && gameBoard[0, 0].Equals(gameBoard[0, 2]))
+                {
+                    this.Invalidate();
+                    if (!player1)
+                    {
+                        MessageBox.Show("Player 1  Wins!");
+                        clearForm();
+                        return;
+                    }
+                    MessageBox.Show("Player 2  Wins!");
+                    clearForm();
+                    return;
+
+
+                }
+
+
+                if (gameBoard[0, 0].Equals(gameBoard[1, 0]) && gameBoard[0, 0].Equals(gameBoard[2, 0]))
+                {
+
+                    this.Invalidate();
+                    if (!player1)
+                    {
+                        MessageBox.Show("Player 1  Wins!");
+                        clearForm();
+                        return;
+                    }
+                    MessageBox.Show("Player 2  Wins!");
+                    clearForm();
+                    return;
+
+
+
+                }
+
+                if (gameBoard[0, 0].Equals(gameBoard[1, 1]) && gameBoard[0, 0].Equals(gameBoard[2, 2]))
+                {
+
+                    this.Invalidate();
+                    if (!player1)
+                    {
+                        MessageBox.Show("Player 1  Wins!");
+                        clearForm();
+                        return;
+                    }
+                    MessageBox.Show("Player 2  Wins!");
+                    clearForm();
+                    return;
+
+
+                }
+
+            }
+
+
+            if(gameBoard[0,1] != '0')
+            {
+
+                if(gameBoard[0,1].Equals(gameBoard[1,1]) && gameBoard[0,1].Equals(gameBoard[2,1]))
+                {
+
+                    this.Invalidate();
+                    if (!player1)
+                    {
+                        MessageBox.Show("Player 1  Wins!");
+                        clearForm();
+                        return;
+                    }
+                    MessageBox.Show("Player 2  Wins!");
+                    clearForm();
+                    return;
+
+                }
 
 
 
             }
 
+
+            if (gameBoard[0, 2] != '0')
+            {
+
+
+                if (gameBoard[0, 2].Equals(gameBoard[1,2]) && gameBoard[0,2].Equals(gameBoard[2,2]))
+                {
+
+                    this.Invalidate();
+                    if (!player1)
+                    {
+                        MessageBox.Show("Player 1  Wins!");
+                        clearForm();
+                        return;
+                    }
+                    MessageBox.Show("Player 2  Wins!");
+                    clearForm();
+                    return;
+
+
+                }
+
+
+            }
+
+            if(gameBoard[1,0]!='0')
+            {
+
+                if(gameBoard[1,0].Equals(gameBoard[1,1]) && gameBoard[1,0].Equals(gameBoard[1,2]))
+                {
+
+                    this.Invalidate();
+                    if (!player1)
+                    {
+                        MessageBox.Show("Player 1  Wins!");
+                        clearForm();
+                        return;
+                    }
+                    MessageBox.Show("Player 2  Wins!");
+                    clearForm();
+                    return;
+
+
+                }
+
+
+            }
+
+            if(gameBoard[0,2] != '0')
+            {
+                if(gameBoard[0,2].Equals(gameBoard[1,2]) && gameBoard[0,2].Equals(gameBoard[2,2]))
+                {
+                    this.Invalidate();
+                    if (!player1)
+                    {
+                        MessageBox.Show("Player 1  Wins!");
+                        clearForm();
+                        return;
+                    }
+                    MessageBox.Show("Player 2  Wins!");
+                    clearForm();
+                    return;
+
+
+                }
+
+
+            }
+
+           if(spacesLeft == 0)
+            {
+                this.Invalidate();
+                MessageBox.Show("Cats game!");
+                clearForm();
+                return;
+
+            }
+               
+                
+
+
+
+
+
+
+            
+
+
+        }
+
+
+        public void clearForm()
+        {
+
+            spacesLeft = 9;
+            player1 = true;
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+
+                    gameBoard[i, j] = '0';
+
+
+                }
+
+            }
+            this.Invalidate();
 
         }
 
@@ -118,7 +300,13 @@ namespace priceacscd371hw5
 
         private void ticTacForm_Load(object sender, EventArgs e)
         {
-            spacesLeft = 9;
+
+            DialogResult result = MessageBox.Show("Single Player?", "Set Up", MessageBoxButtons.YesNo);
+            if(result == DialogResult.Yes)
+            {
+                singlePlayer = true;
+            }
+
             for(int i = 0; i< 3; i++)
             {
                 for(int j = 0; j<3; j++)
@@ -131,19 +319,7 @@ namespace priceacscd371hw5
 
             }
 
-           /* int MTLX = (int) Math.Truncate((650.0 / 3.0) - 20);
-            int MTLY =  MTLX;
-            int MTRX = (int)Math.Truncate(650.0 * (2 / 3) - 20);
-            int MTRY = MTLY;
-            int MBLX = MTLX;
-            int MBLY = MTRX;
-            int MBRX = MTRX;
-            int MBRY = MTRX;
-            int TLX = 50;
-            Point l = new Point(55, 55);
-            Point r = new Point(MTLX, MTLY);
-            gameBoard[0] = new TacBox(l, r);
-            */
+          
 
 
         }
@@ -156,10 +332,7 @@ namespace priceacscd371hw5
             
             int col = rawX / 200;
             int row = rawY / 200;
-            //row = Math.Truncate(row);
-            //col = Math.Truncate(col);
-            //MessageBox.Show(row.ToString() + "," + col.ToString());
-            //MessageBox.Show(rawX.ToString() + "," + rawY.ToString());
+           
             if(row > 2 || col > 2)
             {
                 return;
@@ -173,7 +346,7 @@ namespace priceacscd371hw5
                     gameBoard[row, col] = 'X';
                     player1 = false;
                     --spacesLeft;
-                    checkWin(gameBoard, row, col);
+                    checkWin( player1);
                 }
                 else
                 {
@@ -182,12 +355,36 @@ namespace priceacscd371hw5
             }
             else //player 2's turn they are O's
             {
+                if(singlePlayer)
+                {
+                    for(int i = 0; i<3; i++)
+                    {
+                        for(int j = 0; j<3; j++)
+                        {
+                            if(gameBoard[i,j] == '0')
+                            {
+                                gameBoard[row, col] = 'O';
+                                player1 = true;
+                                --spacesLeft;
+                                checkWin(player1);
+                                this.Invalidate();
+                                return;
+
+                            }
+
+                        }
+
+                    }
+
+
+                }
+
                 if(gameBoard[row,col] == '0')
                 {
                     gameBoard[row, col] = 'O';
                     player1 = true;
                     --spacesLeft;
-                    checkWin(gameBoard, row, col);
+                    checkWin( player1);
 
                 }
                 else

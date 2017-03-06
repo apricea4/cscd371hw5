@@ -25,3 +25,12 @@ C:\Users\Ken\Desktop\cscd371hw5-master\priceacscd371hw5\priceacscd371hw5\obj\Deb
 C:\Users\Ken\Desktop\cscd371hw5-master\priceacscd371hw5\priceacscd371hw5\obj\Debug\priceacscd371hw5.ticTacForm.resources
 C:\Users\Ken\Desktop\cscd371hw5-master\priceacscd371hw5\priceacscd371hw5\obj\Debug\priceacscd371hw5.Properties.Resources.resources
 C:\Users\Ken\Desktop\cscd371hw5-master\priceacscd371hw5\priceacscd371hw5\obj\Debug\priceacscd371hw5.csproj.GenerateResource.Cache
+C:\Users\Alexander Timothy\Skool\theProgramming\CSCD371\cscd371hw5\priceacscd371hw5\priceacscd371hw5\bin\Debug\priceacscd371hw5.exe.config
+C:\Users\Alexander Timothy\Skool\theProgramming\CSCD371\cscd371hw5\priceacscd371hw5\priceacscd371hw5\bin\Debug\priceacscd371hw5.exe
+C:\Users\Alexander Timothy\Skool\theProgramming\CSCD371\cscd371hw5\priceacscd371hw5\priceacscd371hw5\bin\Debug\priceacscd371hw5.pdb
+C:\Users\Alexander Timothy\Skool\theProgramming\CSCD371\cscd371hw5\priceacscd371hw5\priceacscd371hw5\obj\Debug\priceacscd371hw5.csprojResolveAssemblyReference.cache
+C:\Users\Alexander Timothy\Skool\theProgramming\CSCD371\cscd371hw5\priceacscd371hw5\priceacscd371hw5\obj\Debug\priceacscd371hw5.ticTacForm.resources
+C:\Users\Alexander Timothy\Skool\theProgramming\CSCD371\cscd371hw5\priceacscd371hw5\priceacscd371hw5\obj\Debug\priceacscd371hw5.Properties.Resources.resources
+C:\Users\Alexander Timothy\Skool\theProgramming\CSCD371\cscd371hw5\priceacscd371hw5\priceacscd371hw5\obj\Debug\priceacscd371hw5.csproj.GenerateResource.Cache
+C:\Users\Alexander Timothy\Skool\theProgramming\CSCD371\cscd371hw5\priceacscd371hw5\priceacscd371hw5\obj\Debug\priceacscd371hw5.exe
+C:\Users\Alexander Timothy\Skool\theProgramming\CSCD371\cscd371hw5\priceacscd371hw5\priceacscd371hw5\obj\Debug\priceacscd371hw5.pdb
