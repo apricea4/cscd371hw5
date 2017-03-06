@@ -19,6 +19,8 @@ namespace priceacscd371hw5
         Char[ , ] gameBoard = new Char[3 , 3];
         bool player1 = true;
         bool singlePlayer = false;
+        bool isWon = false;
+        bool start = false;
         public ticTacForm()
         {
             InitializeComponent();
@@ -73,9 +75,9 @@ namespace priceacscd371hw5
         }
 
 
-        public void  checkWin( bool player1)
+        public int  checkWin( bool player1)
         {
-
+            this.Invalidate();
             if (gameBoard[0, 0] != '0')
             {
 
@@ -83,17 +85,24 @@ namespace priceacscd371hw5
 
                 if (gameBoard[0, 0].Equals(gameBoard[0, 1]) && gameBoard[0, 0].Equals(gameBoard[0, 2]))
                 {
-                    this.Invalidate();
+
                     if (!player1)
                     {
-                        MessageBox.Show("Player 1  Wins!");
-                        clearForm();
-                        return;
-                    }
-                    MessageBox.Show("Player 2  Wins!");
-                    clearForm();
-                    return;
 
+                        lblWhoWon.Text = "Player 1 wins!";
+                        lblWhoWon.Visible = true;
+                        start = false;
+                        return 1;
+                    }
+                    else
+                    {
+
+
+                        lblWhoWon.Text = "Player 2 wins!";
+                        lblWhoWon.Visible = true;
+                        start = false;
+                        return 2;
+                    }
 
                 }
 
@@ -101,17 +110,24 @@ namespace priceacscd371hw5
                 if (gameBoard[0, 0].Equals(gameBoard[1, 0]) && gameBoard[0, 0].Equals(gameBoard[2, 0]))
                 {
 
-                    this.Invalidate();
+
                     if (!player1)
                     {
-                        MessageBox.Show("Player 1  Wins!");
-                        clearForm();
-                        return;
-                    }
-                    MessageBox.Show("Player 2  Wins!");
-                    clearForm();
-                    return;
 
+                        lblWhoWon.Text = "Player 1 wins!";
+                        lblWhoWon.Visible = true;
+                        start = false;
+                        return 1;
+                    }
+                    else
+                    {
+
+
+                        lblWhoWon.Text = "Player 2 wins!";
+                        lblWhoWon.Visible = true;
+                        start = false;
+                        return 2;
+                    }
 
 
                 }
@@ -119,16 +135,19 @@ namespace priceacscd371hw5
                 if (gameBoard[0, 0].Equals(gameBoard[1, 1]) && gameBoard[0, 0].Equals(gameBoard[2, 2]))
                 {
 
-                    this.Invalidate();
+                   
                     if (!player1)
                     {
-                        MessageBox.Show("Player 1  Wins!");
-                        clearForm();
-                        return;
+                        
+                        lblWhoWon.Text = "Player 1 wins!";
+                        lblWhoWon.Visible = true;
+                        start = false;
+                        return 1;
                     }
-                    MessageBox.Show("Player 2  Wins!");
-                    clearForm();
-                    return;
+                    lblWhoWon.Text = "Player 2 wins!";
+                    lblWhoWon.Visible = true;
+                    start = false;
+                    return 2;
 
 
                 }
@@ -142,16 +161,19 @@ namespace priceacscd371hw5
                 if(gameBoard[0,1].Equals(gameBoard[1,1]) && gameBoard[0,1].Equals(gameBoard[2,1]))
                 {
 
-                    this.Invalidate();
+                    
                     if (!player1)
                     {
-                        MessageBox.Show("Player 1  Wins!");
-                        clearForm();
-                        return;
+                        
+                        lblWhoWon.Text = "Player 1 wins!";
+                        lblWhoWon.Visible = true;
+                        start = false;
+                        return 1;
                     }
-                    MessageBox.Show("Player 2  Wins!");
-                    clearForm();
-                    return;
+                    lblWhoWon.Text = "Player 2 wins!";
+                    lblWhoWon.Visible = true;
+                    start = false;
+                    return 2;
 
                 }
 
@@ -167,16 +189,19 @@ namespace priceacscd371hw5
                 if (gameBoard[0, 2].Equals(gameBoard[1,2]) && gameBoard[0,2].Equals(gameBoard[2,2]))
                 {
 
-                    this.Invalidate();
+                    
                     if (!player1)
                     {
-                        MessageBox.Show("Player 1  Wins!");
-                        clearForm();
-                        return;
+                        
+                        lblWhoWon.Text = "Player 1 wins!";
+                        lblWhoWon.Visible = true;
+                        start = false;
+                        return 1;
                     }
-                    MessageBox.Show("Player 2  Wins!");
-                    clearForm();
-                    return;
+                    lblWhoWon.Text = "Player 2 wins!";
+                    lblWhoWon.Visible = true;
+                    start = false;
+                    return 2;
 
 
                 }
@@ -190,16 +215,19 @@ namespace priceacscd371hw5
                 if(gameBoard[1,0].Equals(gameBoard[1,1]) && gameBoard[1,0].Equals(gameBoard[1,2]))
                 {
 
-                    this.Invalidate();
+                    
                     if (!player1)
                     {
-                        MessageBox.Show("Player 1  Wins!");
-                        clearForm();
-                        return;
+                        
+                        lblWhoWon.Text = "Player 1 wins!";
+                        lblWhoWon.Visible = true;
+                        start = false;
+                        return 1;
                     }
-                    MessageBox.Show("Player 2  Wins!");
-                    clearForm();
-                    return;
+                    lblWhoWon.Text = "Player 2 wins!";
+                    lblWhoWon.Visible = true;
+                    start = false;
+                    return 2;
 
 
                 }
@@ -211,16 +239,19 @@ namespace priceacscd371hw5
             {
                 if(gameBoard[0,2].Equals(gameBoard[1,2]) && gameBoard[0,2].Equals(gameBoard[2,2]))
                 {
-                    this.Invalidate();
+                    
                     if (!player1)
                     {
-                        MessageBox.Show("Player 1  Wins!");
-                        clearForm();
-                        return;
+                        
+                        lblWhoWon.Text = "Player 1 wins!";
+                        lblWhoWon.Visible = true;
+                        start = false;
+                        return 1;
                     }
-                    MessageBox.Show("Player 2  Wins!");
-                    clearForm();
-                    return;
+                    lblWhoWon.Text = "Player 2 wins!";
+                    lblWhoWon.Visible = true;
+                    start = false;
+                    return 2;
 
 
                 }
@@ -230,18 +261,20 @@ namespace priceacscd371hw5
 
            if(spacesLeft == 0)
             {
-                this.Invalidate();
-                MessageBox.Show("Cats game!");
-                clearForm();
-                return;
+                
+                
+                lblWhoWon.Text = "The cats win this round";
+                lblWhoWon.Visible = true;
+                start = false;
+                return 0;
 
             }
-               
-                
 
 
 
 
+            return -1;
+            
 
 
             
@@ -252,9 +285,13 @@ namespace priceacscd371hw5
 
         public void clearForm()
         {
-
+            
+            start = false;
             spacesLeft = 9;
             player1 = true;
+            singlePlayer = false;
+            lblPlayer1.Visible = false;
+            lblPlayer2.Visible = false;
             for (int i = 0; i < 3; i++)
             {
                 for (int j = 0; j < 3; j++)
@@ -266,6 +303,7 @@ namespace priceacscd371hw5
                 }
 
             }
+            
             this.Invalidate();
 
         }
@@ -278,7 +316,7 @@ namespace priceacscd371hw5
             int originX = (edge * col) + MARGIN + PADDING;
             int originY = (edge * row) + MARGIN + PADDING;
 
-            //Point lowerLeft = new Point(())
+            
             Point origin = new Point(originX,originY);//0,0
             int fx = originX + edge - (2*PADDING);
             int fy = originY + edge - (2*PADDING);
@@ -301,11 +339,7 @@ namespace priceacscd371hw5
         private void ticTacForm_Load(object sender, EventArgs e)
         {
 
-            DialogResult result = MessageBox.Show("Single Player?", "Set Up", MessageBoxButtons.YesNo);
-            if(result == DialogResult.Yes)
-            {
-                singlePlayer = true;
-            }
+           
 
             for(int i = 0; i< 3; i++)
             {
@@ -323,10 +357,19 @@ namespace priceacscd371hw5
 
 
         }
+       
+
+
+
+
 
         private void ticTacForm_MouseClick(object sender, MouseEventArgs e)
         {
-            
+
+            if(!start)
+            {
+                return;
+            }
             int rawX = e.X - 50;
             int rawY = e.Y - 50;
             
@@ -339,52 +382,72 @@ namespace priceacscd371hw5
 
             }
 
+            
+
+
+
             if(player1)//is it player 1's turn they are x
             {
+                lblPlayer1.Visible = true;
                 if (gameBoard[row, col] == '0')
                 {
                     gameBoard[row, col] = 'X';
                     player1 = false;
                     --spacesLeft;
-                    checkWin( player1);
+                    if(checkWin( player1) == 1)
+                    {
+                        MessageBox.Show("player 1 won");
+                    }
+                    
+                    lblPlayer1.Visible = false;
+                    lblPlayer2.Visible = true;
                 }
                 else
                 {
                     return;
                 }
             }
-            else //player 2's turn they are O's
+
+            if(!player1 && singlePlayer)
             {
-                if(singlePlayer)
+                if(checkWin(false) == 1 || checkWin(false) == 0)
                 {
-                    for(int i = 0; i<3; i++)
-                    {
-                        for(int j = 0; j<3; j++)
-                        {
-                            if(gameBoard[i,j] == '0')
-                            {
-                                gameBoard[row, col] = 'O';
-                                player1 = true;
-                                --spacesLeft;
-                                checkWin(player1);
-                                this.Invalidate();
-                                return;
-
-                            }
-
-                        }
-
-                    }
-
-
+                    return;
+                }
+                Random randy = new Random();
+                
+                
+                int r = randy.Next(3);
+                int c = randy.Next(3);
+                while(gameBoard[r,c] != '0')
+                {
+                    r = randy.Next(3);
+                    c = randy.Next(3);
                 }
 
+                gameBoard[r, c] = 'O';
+                player1 = true;
+                --spacesLeft;
+                checkWin(player1);
+                lblPlayer1.Visible = true;
+                lblPlayer2.Visible = false;
+
+
+            }
+
+
+            if(!player1 && !singlePlayer)//player 2's turn they are O's
+            {
+
+                lblPlayer2.Visible = true;
                 if(gameBoard[row,col] == '0')
                 {
                     gameBoard[row, col] = 'O';
                     player1 = true;
                     --spacesLeft;
                     checkWin( player1);
+                    lblPlayer2.Visible = false;
+                    lblPlayer1.Visible = true;
 
                 }
                 else
@@ -394,9 +457,72 @@ namespace priceacscd371hw5
             }
 
 
-            this.Invalidate();
+            //this.Invalidate();
 
 
         }
+
+        private void menuStart_Click(object sender, EventArgs e)
+        {
+            lblWhoWon.Visible = false;
+            clearForm();
+            start = true;
+            DialogResult result = MessageBox.Show("Single Player?", "Set Up", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                singlePlayer = true;
+            }
+
+            Random randy = new Random();
+            int coin = randy.Next(101);
+            if(coin < 50)
+            {
+                MessageBox.Show("Tails! O's go first. (Player 2)");
+                player1 = false;
+                
+
+
+                int r = randy.Next(3);
+                int c = randy.Next(3);
+                while (gameBoard[r, c] != '0')
+                {
+                    r = randy.Next(3);
+                    c = randy.Next(3);
+                }
+
+                gameBoard[r, c] = 'O';
+                player1 = true;
+                --spacesLeft;
+                checkWin(player1);
+                lblPlayer1.Visible = true;
+                lblPlayer2.Visible = false;
+
+            }
+            if (coin > 50)
+            {
+                MessageBox.Show("Heads! X's go first. (Player 1)");
+                player1 = true;
+            }
+
+        }
+
+        private void menuExit_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void rulesMenu_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Click start game and then follow the directions for single or 2 player game.  A coin toss decideds who goes first."
+                + "Be the first to get three in a row either diagonally or straight across.");
+        }
+
+        private void aboutMenu_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Author: Alex Price\n Version: 0.9\n May 5th, 2017");
+        }
     }
+
+
+   
 }
