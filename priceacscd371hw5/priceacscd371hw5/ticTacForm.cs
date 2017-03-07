@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
+//Alex Price 00691493 Tic Tac Toe game in which you can play against the computer or with a friend.
+//utilizes drawing using winforms.  
 namespace priceacscd371hw5
 {
     public partial class ticTacForm : Form
@@ -19,7 +20,7 @@ namespace priceacscd371hw5
         Char[ , ] gameBoard = new Char[3 , 3];
         bool player1 = true;
         bool singlePlayer = false;
-        bool isWon = false;
+        
         bool start = false;
         public ticTacForm()
         {
@@ -32,6 +33,7 @@ namespace priceacscd371hw5
         {
             Graphics graphic = e.Graphics;
             Pen p = new Pen(Color.CornflowerBlue, 20);
+            DoubleBuffered = true;
             double d2 = 600.0 * (2.0/3.0);
             double d1 = 600.0 / 3.0;
             int  oneThird = (int)Math.Truncate(d1);
@@ -256,8 +258,68 @@ namespace priceacscd371hw5
 
                 }
 
+                if (gameBoard[0, 2].Equals(gameBoard[1, 1]) && gameBoard[0, 2].Equals(gameBoard[2, 0]))
+                {
+
+                    if (!player1)
+                    {
+
+                        lblWhoWon.Text = "Player 1 wins!";
+                        lblWhoWon.Visible = true;
+                        start = false;
+                        return 1;
+                    }
+                    lblWhoWon.Text = "Player 2 wins!";
+                    lblWhoWon.Visible = true;
+                    start = false;
+                    return 2;
+
+
+                }
+
+
 
             }
+
+
+            if(gameBoard[2,0] != '0')
+            {
+
+
+                if (gameBoard[2,0].Equals(gameBoard[2, 1]) && gameBoard[2,0].Equals(gameBoard[2, 2]))
+                {
+
+                    if (!player1)
+                    {
+
+                        lblWhoWon.Text = "Player 1 wins!";
+                        lblWhoWon.Visible = true;
+                        start = false;
+                        return 1;
+                    }
+                    lblWhoWon.Text = "Player 2 wins!";
+                    lblWhoWon.Visible = true;
+                    start = false;
+                    return 2;
+
+
+                }
+
+
+
+
+            }
+
+
+
+
+           // if(gameBoard[0,2] != '0')
+            //{
+                
+
+
+            //}
+            
 
            if(spacesLeft == 0)
             {
@@ -394,9 +456,9 @@ namespace priceacscd371hw5
                     gameBoard[row, col] = 'X';
                     player1 = false;
                     --spacesLeft;
-                    if(checkWin( player1) == 1)
+                   if(checkWin( player1) == 1)
                     {
-                        MessageBox.Show("player 1 won");
+                        
                     }
                     
                     lblPlayer1.Visible = false;
@@ -457,7 +519,7 @@ namespace priceacscd371hw5
             }
 
 
-            //this.Invalidate();
+            this.Invalidate();
 
 
         }
@@ -479,23 +541,28 @@ namespace priceacscd371hw5
             {
                 MessageBox.Show("Tails! O's go first. (Player 2)");
                 player1 = false;
-                
+                lblPlayer1.Visible = false;
+                lblPlayer2.Visible = true;
 
-
-                int r = randy.Next(3);
-                int c = randy.Next(3);
-                while (gameBoard[r, c] != '0')
+                if (singlePlayer)
                 {
-                    r = randy.Next(3);
-                    c = randy.Next(3);
-                }
 
-                gameBoard[r, c] = 'O';
-                player1 = true;
-                --spacesLeft;
-                checkWin(player1);
-                lblPlayer1.Visible = true;
-                lblPlayer2.Visible = false;
+
+                    int r = randy.Next(3);
+                    int c = randy.Next(3);
+                    while (gameBoard[r, c] != '0')
+                    {
+                        r = randy.Next(3);
+                        c = randy.Next(3);
+                    }
+
+                    gameBoard[r, c] = 'O';
+                    player1 = true;
+                    --spacesLeft;
+                    checkWin(player1);
+                    lblPlayer1.Visible = true;
+                    lblPlayer2.Visible = false;
+                }
 
             }
             if (coin > 50)

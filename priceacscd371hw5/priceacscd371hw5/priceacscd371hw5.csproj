@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TacBox.cs" />
     <Compile Include="ticTacForm.cs">
       <SubType>Form</SubType>
     </Compile>

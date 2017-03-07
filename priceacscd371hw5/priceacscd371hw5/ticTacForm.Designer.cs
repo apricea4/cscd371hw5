@@ -64,14 +64,14 @@
             // menuStart
             // 
             this.menuStart.Name = "menuStart";
-            this.menuStart.Size = new System.Drawing.Size(152, 22);
+            this.menuStart.Size = new System.Drawing.Size(98, 22);
             this.menuStart.Text = "Start";
             this.menuStart.Click += new System.EventHandler(this.menuStart_Click);
             // 
             // menuExit
             // 
             this.menuExit.Name = "menuExit";
-            this.menuExit.Size = new System.Drawing.Size(152, 22);
+            this.menuExit.Size = new System.Drawing.Size(98, 22);
             this.menuExit.Text = "Exit";
             this.menuExit.Click += new System.EventHandler(this.menuExit_Click);
             // 
@@ -87,14 +87,14 @@
             // rulesMenu
             // 
             this.rulesMenu.Name = "rulesMenu";
-            this.rulesMenu.Size = new System.Drawing.Size(152, 22);
+            this.rulesMenu.Size = new System.Drawing.Size(107, 22);
             this.rulesMenu.Text = "Rules";
             this.rulesMenu.Click += new System.EventHandler(this.rulesMenu_Click);
             // 
             // aboutMenu
             // 
             this.aboutMenu.Name = "aboutMenu";
-            this.aboutMenu.Size = new System.Drawing.Size(152, 22);
+            this.aboutMenu.Size = new System.Drawing.Size(107, 22);
             this.aboutMenu.Text = "About";
             this.aboutMenu.Click += new System.EventHandler(this.aboutMenu_Click);
             // 
@@ -103,9 +103,9 @@
             this.lblPlayer1.AutoSize = true;
             this.lblPlayer1.Location = new System.Drawing.Point(732, 47);
             this.lblPlayer1.Name = "lblPlayer1";
-            this.lblPlayer1.Size = new System.Drawing.Size(93, 13);
+            this.lblPlayer1.Size = new System.Drawing.Size(96, 13);
             this.lblPlayer1.TabIndex = 1;
-            this.lblPlayer1.Text = "Player !\'s turn (X\'s)";
+            this.lblPlayer1.Text = "Player 1\'s turn (X\'s)";
             this.lblPlayer1.Visible = false;
             // 
             // lblPlayer2
@@ -122,7 +122,7 @@
             // 
             this.lblWhoWon.AutoSize = true;
             this.lblWhoWon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWhoWon.Location = new System.Drawing.Point(735, 156);
+            this.lblWhoWon.Location = new System.Drawing.Point(699, 150);
             this.lblWhoWon.Name = "lblWhoWon";
             this.lblWhoWon.Size = new System.Drawing.Size(0, 20);
             this.lblWhoWon.TabIndex = 3;
